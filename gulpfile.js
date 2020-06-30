@@ -1,5 +1,5 @@
-const git = require('gulp-git'),
-	gitStatus = require('git-get-status'),
+const exec = require('child_process').exec,
+	git = require('gulp-git'),
 	gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	prompt = require('gulp-prompt');
@@ -9,8 +9,12 @@ function getVersionFromPackage() {
 }
 
 gulp.task('ensure-clean-working-directory', (cb) => {
-	gitStatus((err, status) => {
-		if (err, !status.clean) {
+	git.status({ args: '-s', quiet: true }, (err, stdout) => {
+		if (err) {
+			throw new Error(err);
+		}
+
+		if (stdout.length > 0) {
 			throw new Error('Unable to proceed, your working directory is not clean.');
 		}
 

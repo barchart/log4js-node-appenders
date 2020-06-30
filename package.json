@@ -4,7 +4,6 @@
   "description": "JavaScript library with custom appenders for log4js",
   "dependencies": {},
   "devDependencies": {
-    "git-get-status": "^1.0.2",
     "gulp": "^4.0.2",
     "gulp-git": "^2.10.1",
     "gulp-jshint": "~2.1.0",
