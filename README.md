@@ -17,6 +17,14 @@ A console appender that routes output to the correct function of the ```console`
 
 **Usage Example**
 
+### Package Managers
+
+This library is available as a *public* module on NPM.
+
+```shell
+npm install @barchart/log4js-node-appenders -S
+```
+
 ### License
 
 This software is provided under the MIT license.
