@@ -3,6 +3,7 @@ const exec = require('child_process').exec,
 
 const git = require('gulp-git'),
 	gulp = require('gulp'),
+	jasmine = require('gulp-jasmine'),
 	jshint = require('gulp-jshint'),
 	prompt = require('gulp-prompt');
 
@@ -73,8 +74,14 @@ gulp.task('create-tag', (cb) => {
 	});
 });
 
+gulp.task('execute-tests', () => {
+	return gulp.src(['test/specs/**/*.js'])
+		.pipe(jasmine());
+});
+
 gulp.task('release', gulp.series(
 	'ensure-clean-working-directory',
+	'execute-tests',
 	'bump-choice',
 	'bump-version',
 	'commit-changes',
@@ -84,8 +91,10 @@ gulp.task('release', gulp.series(
 
 gulp.task('lint', () => {
 	return gulp.src([ './**/*.js', '!./node_modules/**' ])
-		.pipe(jshint({ esversion: 6 }))
+		.pipe(jshint({ esversion: 9 }))
 		.pipe(jshint.reporter('default'));
 });
+
+gulp.task('test', gulp.series('execute-tests'));
 
 gulp.task('default', gulp.series('lint'));
