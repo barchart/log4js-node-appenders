@@ -1,13 +1,21 @@
 {
   "name": "@barchart/log4js-node-appenders",
   "version": "1.1.1",
-  "description": "JavaScript library with custom appenders for log4js",
-  "dependencies": {},
+  "description": "Custom appenders for log4js",
+  "author": {
+    "name": "Igor Losev",
+    "email": "ihar.loseu@itechart-group.com",
+    "url": "http://www.barchart.com"
+  },
+  "dependencies": {
+
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-git": "^2.10.1",
     "gulp-jshint": "~2.1.0",
     "gulp-prompt": "^1.2.0",
     "jshint": "2.9.5"
-  }
+  },
+  "license": "MIT"
 }
