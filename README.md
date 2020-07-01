@@ -6,16 +6,16 @@ Assorted _appenders_ to be used with [log4js](https://github.com/log4js-node/log
 
 ### Console Appender (for AWS Lambda)
 
-A console appender that routes output to the correct ```console``` function, according to log level. This appender is useful for logging within an AWS Lambda function.
+A console appender that routes output to the correct function of the ```console``` object. This appender is useful for logging within an AWS Lambda function (avoids writing all logs at the ```INFO``` level).
 
-* TRACE -> ```console.trace```
-* DEBUG -> ```console.debug```
-* INFO -> ```console.log```
-* WARN -> ```console.warn```
-* ERROR -> ```console.error```
-* FATAL -> ```console.error```
+* ```TRACE``` -> ```console.trace```
+* ```DEBUG``` -> ```console.debug```
+* ```INFO``` -> ```console.log```
+* ```WARN``` -> ```console.warn```
+* ```ERROR``` -> ```console.error```
+* ```FATAL``` -> ```console.error```
 
-**Example**
+**Usage Example**
 
 
 
