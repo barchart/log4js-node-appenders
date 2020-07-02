@@ -18,7 +18,10 @@
       "url": "http://www.barchart.com"
     }
   ],
-  "dependencies": {},
+  "main": "index.js",
+  "dependencies": {
+
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-git": "^2.10.1",
