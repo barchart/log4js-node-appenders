@@ -19,9 +19,7 @@
     }
   ],
   "main": "index.js",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-git": "^2.10.1",

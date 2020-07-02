@@ -7,8 +7,12 @@ console.error = jasmine.createSpy('console.error');
 appender = require('./../../lib/lambda');
 
 describe('When the "lambda" appender is accessed', () => {
-	it('should return a function', () => {
-		expect(typeof appender).toEqual('function');
+	it('should return an object', () => {
+		expect(typeof appender).toEqual('object');
+	});
+
+	it('should have a function called "configure"', () => {
+		expect(typeof appender.configure).toEqual('function');
 	});
 
 	describe('and "configured" with a mock "layouts" and an empty "configuration" object', () => {
@@ -26,7 +30,7 @@ describe('When the "lambda" appender is accessed', () => {
 		}
 
 		beforeEach(() => {
-			appenderFn = appender({ }, { colouredLayout: layout = x => x.data });
+			appenderFn = appender.configure({ }, { colouredLayout: layout = x => x.data });
 		});
 
 		it('the "configured" appender should be a function', () => {

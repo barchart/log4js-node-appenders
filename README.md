@@ -47,7 +47,6 @@ logger.error('Error level log message');
 logger.fatal('Fatal level log message');
 ```
 
-
 ### Package Managers
 
 This library is available as a *public* module on NPM.
