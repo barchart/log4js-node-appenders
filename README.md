@@ -17,6 +17,37 @@ A console appender that routes output to the correct function of the ```console`
 
 **Usage Example**
 
+```
+const log4js = require('log4js');
+
+const appenders = require('@barchart/log4js-node-appenders');
+
+log4js.configure({
+	categories: {
+		default: { appenders: [ 'lambda' ], level: 'trace' }
+	},
+	appenders: {
+		lambda: {
+			type: appenders.lambda,
+			layout: {
+				type: 'pattern',
+				pattern: '%c - %m%'
+			}
+		}
+	}
+});
+
+const logger = log4js.getLogger('Example');
+
+logger.trace('Trace level log message');
+logger.debug('Debug level log message');
+logger.info('Info level log message');
+logger.warn('Warn level log message');
+logger.error('Error level log message');
+logger.fatal('Fatal level log message');
+```
+
+
 ### Package Managers
 
 This library is available as a *public* module on NPM.
