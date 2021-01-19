@@ -17,7 +17,7 @@ A console appender that routes output to the correct function of the ```console`
 
 **Usage Example**
 
-```
+```js
 const log4js = require('log4js');
 
 const appenders = require('@barchart/log4js-node-appenders');
